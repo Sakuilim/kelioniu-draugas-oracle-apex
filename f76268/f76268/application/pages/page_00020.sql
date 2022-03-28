@@ -1,0 +1,400 @@
+prompt --application/pages/page_00020
+begin
+--   Manifest
+--     PAGE: 00020
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.5'
+,p_default_workspace_id=>41384264076266073471
+,p_default_application_id=>76268
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_IDEWORK'
+);
+wwv_flow_api.create_page(
+ p_id=>20
+,p_user_interface_id=>wwv_flow_api.id(32171157112464348400)
+,p_name=>'Nuolaidos Kodas'
+,p_alias=>'NUOLAIDOS-KODAS'
+,p_page_mode=>'MODAL'
+,p_step_title=>'Nuolaidos Kodas'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_last_updated_by=>'ADMIN'
+,p_last_upd_yyyymmddhh24miss=>'20211025072842'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(5615629371076937226)
+,p_plug_name=>'Nuolaidos Kodas'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(32171036412868348331)
+,p_plug_display_sequence=>10
+,p_query_type=>'SQL'
+,p_plug_source=>'select id, to_char(value*100, ''99.99'') value, code, info from discounts'
+,p_is_editable=>true
+,p_edit_operations=>'i:u:d'
+,p_lost_update_check_type=>'VALUES'
+,p_plug_source_type=>'NATIVE_FORM'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(5615631785125937228)
+,p_plug_name=>'Buttons'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(32171037499315348332)
+,p_plug_display_sequence=>20
+,p_plug_display_point=>'REGION_POSITION_03'
+,p_attribute_01=>'N'
+,p_attribute_02=>'TEXT'
+,p_attribute_03=>'Y'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(5615632124501937229)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(5615631785125937228)
+,p_button_name=>'CANCEL'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(32171132605300348380)
+,p_button_image_alt=>unistr('At\0161aukti')
+,p_button_position=>'CLOSE'
+,p_warn_on_unsaved_changes=>null
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(5615633509130937230)
+,p_button_sequence=>20
+,p_button_plug_id=>wwv_flow_api.id(5615631785125937228)
+,p_button_name=>'DELETE'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(32171132605300348380)
+,p_button_image_alt=>unistr('I\0161trinti')
+,p_button_position=>'DELETE'
+,p_button_execute_validations=>'N'
+,p_warn_on_unsaved_changes=>null
+,p_confirm_message=>unistr('Ar tikrai norite i\0161trinti \012Fra\0161\0105?')
+,p_confirm_style=>'danger'
+,p_button_condition=>'P20_ID'
+,p_button_condition_type=>'ITEM_IS_NOT_NULL'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(5615633943891937230)
+,p_button_sequence=>30
+,p_button_plug_id=>wwv_flow_api.id(5615631785125937228)
+,p_button_name=>'SAVE'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(32171132605300348380)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>unistr('I\0161saugoti')
+,p_button_position=>'NEXT'
+,p_warn_on_unsaved_changes=>null
+,p_button_condition=>'P20_ID'
+,p_button_condition_type=>'ITEM_IS_NOT_NULL'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(5615634335487937230)
+,p_button_sequence=>40
+,p_button_plug_id=>wwv_flow_api.id(5615631785125937228)
+,p_button_name=>'CREATE'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(32171132605300348380)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Sukurti'
+,p_button_position=>'NEXT'
+,p_warn_on_unsaved_changes=>null
+,p_button_condition=>'P20_ID'
+,p_button_condition_type=>'ITEM_IS_NULL'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(5604845183787662316)
+,p_name=>'P20_CODE'
+,p_source_data_type=>'VARCHAR2'
+,p_is_required=>true
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(5615629371076937226)
+,p_item_source_plug_id=>wwv_flow_api.id(5615629371076937226)
+,p_prompt=>'Kodas'
+,p_source=>'CODE'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_cMaxlength=>20
+,p_field_template=>wwv_flow_api.id(32171131437458348378)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(5615629680795937226)
+,p_name=>'P20_ID'
+,p_source_data_type=>'NUMBER'
+,p_is_primary_key=>true
+,p_is_query_only=>true
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(5615629371076937226)
+,p_item_source_plug_id=>wwv_flow_api.id(5615629371076937226)
+,p_source=>'ID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_protection_level=>'S'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(5615630010487937227)
+,p_name=>'P20_VALUE'
+,p_source_data_type=>'VARCHAR2'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_api.id(5615629371076937226)
+,p_item_source_plug_id=>wwv_flow_api.id(5615629371076937226)
+,p_prompt=>unistr('Nuolaidos vert\0117 (%)')
+,p_source=>'VALUE'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_NUMBER_FIELD'
+,p_cSize=>32
+,p_cMaxlength=>6
+,p_begin_on_new_line=>'N'
+,p_field_template=>wwv_flow_api.id(32171131437458348378)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_attribute_03=>'right'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(5615630461311937227)
+,p_name=>'P20_INFO'
+,p_source_data_type=>'VARCHAR2'
+,p_is_required=>true
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_api.id(5615629371076937226)
+,p_item_source_plug_id=>wwv_flow_api.id(5615629371076937226)
+,p_prompt=>'Informacija'
+,p_source=>'INFO'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>60
+,p_cMaxlength=>254
+,p_begin_on_new_line=>'N'
+,p_field_template=>wwv_flow_api.id(32171131437458348378)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(5615632225825937229)
+,p_name=>'Cancel'
+,p_event_sequence=>10
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_api.id(5615632124501937229)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(5604845252444662317)
+,p_event_id=>wwv_flow_api.id(5615632225825937229)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(5615629371076937226)
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(5615633053871937229)
+,p_event_id=>wwv_flow_api.id(5615632225825937229)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>'apex.navigation.redirect ( "f?p=&APP_ID.:19:&APP_SESSION.::NO:RP::" );'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(5604845363963662318)
+,p_name=>'Delete'
+,p_event_sequence=>20
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_api.id(5615633509130937230)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(5604845504798662320)
+,p_event_id=>wwv_flow_api.id(5604845363963662318)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>'delete from discounts where id = :P20_ID;'
+,p_attribute_02=>'P20_ID'
+,p_attribute_05=>'PLSQL'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(5604845614299662321)
+,p_event_id=>wwv_flow_api.id(5604845363963662318)
+,p_event_result=>'TRUE'
+,p_action_sequence=>50
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(5615629371076937226)
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(5604845788393662322)
+,p_event_id=>wwv_flow_api.id(5604845363963662318)
+,p_event_result=>'TRUE'
+,p_action_sequence=>70
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>'apex.navigation.redirect ( "f?p=&APP_ID.:19:&APP_SESSION.::NO:RP::" );'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(5604845840250662323)
+,p_name=>'Update'
+,p_event_sequence=>30
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_api.id(5615633943891937230)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(5604846136447662326)
+,p_event_id=>wwv_flow_api.id(5604845840250662323)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'update discounts ',
+'set code = :P20_CODE,',
+'value = :P20_VALUE/100,',
+'info = :P20_INFO',
+'where id = :P20_ID;'))
+,p_attribute_02=>'P20_ID,P20_CODE,P20_VALUE,P20_INFO'
+,p_attribute_05=>'PLSQL'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(5604846400319662329)
+,p_event_id=>wwv_flow_api.id(5604845840250662323)
+,p_event_result=>'TRUE'
+,p_action_sequence=>40
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_ALERT'
+,p_attribute_01=>unistr('\012Era\0161as atnaujintas!')
+,p_attribute_03=>'information'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(5604846274316662327)
+,p_event_id=>wwv_flow_api.id(5604845840250662323)
+,p_event_result=>'TRUE'
+,p_action_sequence=>60
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(5615629371076937226)
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(5604846390897662328)
+,p_event_id=>wwv_flow_api.id(5604845840250662323)
+,p_event_result=>'TRUE'
+,p_action_sequence=>80
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>'apex.navigation.redirect ( "f?p=&APP_ID.:19:&APP_SESSION.::NO:RP::" );'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(5604846643982662331)
+,p_name=>'Insert'
+,p_event_sequence=>40
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_api.id(5615634335487937230)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(5604846886191662333)
+,p_event_id=>wwv_flow_api.id(5604846643982662331)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'insert into discounts(code, value, info) ',
+'values (:P20_CODE, :P20_VALUE/100, :P20_INFO);'))
+,p_attribute_02=>'P20_CODE,P20_VALUE,P20_INFO'
+,p_attribute_05=>'PLSQL'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(5604846994462662334)
+,p_event_id=>wwv_flow_api.id(5604846643982662331)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_ALERT'
+,p_attribute_01=>unistr('\012Era\0161as sukurtas!')
+,p_attribute_03=>'information'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(5604847020397662335)
+,p_event_id=>wwv_flow_api.id(5604846643982662331)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(5615629371076937226)
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(5604847164474662336)
+,p_event_id=>wwv_flow_api.id(5604846643982662331)
+,p_event_result=>'TRUE'
+,p_action_sequence=>40
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>'apex.navigation.redirect ( "f?p=&APP_ID.:19:&APP_SESSION.::NO:RP::" );'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(5615635163680937230)
+,p_process_sequence=>10
+,p_process_point=>'AFTER_SUBMIT'
+,p_region_id=>wwv_flow_api.id(5615629371076937226)
+,p_process_type=>'NATIVE_FORM_DML'
+,p_process_name=>'Process form Nuolaidos Kodas'
+,p_attribute_01=>'REGION_SOURCE'
+,p_attribute_05=>'Y'
+,p_attribute_06=>'Y'
+,p_attribute_08=>'Y'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(5615635537424937231)
+,p_process_sequence=>50
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_CLOSE_WINDOW'
+,p_process_name=>'Close Dialog'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when=>'CREATE,SAVE,DELETE'
+,p_process_when_type=>'REQUEST_IN_CONDITION'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(5615634728483937230)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_region_id=>wwv_flow_api.id(5615629371076937226)
+,p_process_type=>'NATIVE_FORM_INIT'
+,p_process_name=>'Initialize form Nuolaidos Kodas'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.component_end;
+end;
+/

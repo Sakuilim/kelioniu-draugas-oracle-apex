@@ -1,0 +1,429 @@
+prompt --application/pages/page_00010
+begin
+--   Manifest
+--     PAGE: 00010
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.5'
+,p_default_workspace_id=>41384264076266073471
+,p_default_application_id=>76268
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_IDEWORK'
+);
+wwv_flow_api.create_page(
+ p_id=>10
+,p_user_interface_id=>wwv_flow_api.id(32171157112464348400)
+,p_name=>'Miestas'
+,p_alias=>'MIESTAS'
+,p_page_mode=>'MODAL'
+,p_step_title=>'Miestas'
+,p_autocomplete_on_off=>'OFF'
+,p_javascript_code=>'var htmldb_delete_message=''"DELETE_CONFIRM_MSG"'';'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_last_updated_by=>'ADMIN'
+,p_last_upd_yyyymmddhh24miss=>'20211126091133'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(33359245293402949887)
+,p_plug_name=>'Miestas'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(32171036412868348331)
+,p_plug_display_sequence=>10
+,p_query_type=>'TABLE'
+,p_query_table=>'CITIES'
+,p_include_rowid_column=>false
+,p_is_editable=>true
+,p_edit_operations=>'i:u:d'
+,p_lost_update_check_type=>'VALUES'
+,p_plug_source_type=>'NATIVE_FORM'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(33359247732470949890)
+,p_plug_name=>'Buttons'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(32171037499315348332)
+,p_plug_display_sequence=>20
+,p_plug_display_point=>'REGION_POSITION_03'
+,p_attribute_01=>'N'
+,p_attribute_02=>'TEXT'
+,p_attribute_03=>'Y'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(33359248165242949890)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(33359247732470949890)
+,p_button_name=>'CANCEL'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(32171132605300348380)
+,p_button_image_alt=>unistr('At\0161aukti')
+,p_button_position=>'CLOSE'
+,p_warn_on_unsaved_changes=>null
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(33359249767870949891)
+,p_button_sequence=>20
+,p_button_plug_id=>wwv_flow_api.id(33359247732470949890)
+,p_button_name=>'DELETE'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(32171132605300348380)
+,p_button_image_alt=>unistr('I\0161trinti')
+,p_button_position=>'DELETE'
+,p_button_execute_validations=>'N'
+,p_warn_on_unsaved_changes=>null
+,p_button_condition=>'P10_ID'
+,p_button_condition_type=>'ITEM_IS_NOT_NULL'
+,p_database_action=>'DELETE'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(33359250189188949891)
+,p_button_sequence=>30
+,p_button_plug_id=>wwv_flow_api.id(33359247732470949890)
+,p_button_name=>'SAVE'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(32171132605300348380)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>unistr('i\0161aaugoti')
+,p_button_position=>'NEXT'
+,p_warn_on_unsaved_changes=>null
+,p_button_condition=>'P10_ID'
+,p_button_condition_type=>'ITEM_IS_NOT_NULL'
+,p_database_action=>'UPDATE'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(33359250564556949892)
+,p_button_sequence=>40
+,p_button_plug_id=>wwv_flow_api.id(33359247732470949890)
+,p_button_name=>'CREATE'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(32171132605300348380)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Sukurti'
+,p_button_position=>'NEXT'
+,p_warn_on_unsaved_changes=>null
+,p_button_condition=>'P10_ID'
+,p_button_condition_type=>'ITEM_IS_NULL'
+,p_database_action=>'INSERT'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(33359245674026949888)
+,p_name=>'P10_ID'
+,p_source_data_type=>'NUMBER'
+,p_is_primary_key=>true
+,p_is_query_only=>true
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(33359245293402949887)
+,p_item_source_plug_id=>wwv_flow_api.id(33359245293402949887)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Id'
+,p_source=>'ID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(32171130103909348377)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_protection_level=>'S'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(33359246030515949888)
+,p_name=>'P10_COUNTRY_ID'
+,p_source_data_type=>'NUMBER'
+,p_is_required=>true
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(33359245293402949887)
+,p_item_source_plug_id=>wwv_flow_api.id(33359245293402949887)
+,p_prompt=>unistr('\0160alis')
+,p_source=>'COUNTRY_ID'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_lov=>'select name d, id r from countries'
+,p_lov_display_null=>'YES'
+,p_lov_null_text=>'- Pasirinkti -'
+,p_cHeight=>1
+,p_field_template=>wwv_flow_api.id(32171131437458348378)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_lov_display_extra=>'YES'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(33359246427594949889)
+,p_name=>'P10_NAME'
+,p_source_data_type=>'VARCHAR2'
+,p_is_required=>true
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_api.id(33359245293402949887)
+,p_item_source_plug_id=>wwv_flow_api.id(33359245293402949887)
+,p_prompt=>'Miestas'
+,p_source=>'NAME'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>60
+,p_cMaxlength=>254
+,p_field_template=>wwv_flow_api.id(32171131437458348378)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(33356376800247412539)
+,p_name=>'Cancle'
+,p_event_sequence=>10
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_api.id(33359248165242949890)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33356376971624412540)
+,p_event_id=>wwv_flow_api.id(33356376800247412539)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(33359245293402949887)
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33356377089757412541)
+,p_event_id=>wwv_flow_api.id(33356376800247412539)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>'apex.navigation.redirect ( "f?p=&APP_ID.:9:&APP_SESSION.::NO:RP::" );'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(33356377232178412543)
+,p_name=>'Delete'
+,p_event_sequence=>20
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_api.id(33359249767870949891)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33356377315035412544)
+,p_event_id=>wwv_flow_api.id(33356377232178412543)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CONFIRM'
+,p_attribute_01=>unistr('Ar tikrai norite i\0161trinti \012Fra\0161\0105?')
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33356377653814412547)
+,p_event_id=>wwv_flow_api.id(33356377232178412543)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>'delete from cities where id = :P10_ID;'
+,p_attribute_02=>'P10_ID'
+,p_attribute_05=>'PLSQL'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33356377468306412545)
+,p_event_id=>wwv_flow_api.id(33356377232178412543)
+,p_event_result=>'TRUE'
+,p_action_sequence=>50
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(33359245293402949887)
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33356377582977412546)
+,p_event_id=>wwv_flow_api.id(33356377232178412543)
+,p_event_result=>'TRUE'
+,p_action_sequence=>70
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>'apex.navigation.redirect ( "f?p=&APP_ID.:9:&APP_SESSION.::NO:RP::" );'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(33356377716250412548)
+,p_name=>'Update'
+,p_event_sequence=>30
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_api.id(33359250189188949891)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33360067958646983903)
+,p_event_id=>wwv_flow_api.id(33356377716250412548)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'update cities set',
+'country_id = :P10_COUNTRY_ID,',
+'name = :P10_NAME',
+'where id = :P10_ID;'))
+,p_attribute_02=>'P10_ID,P10_COUNTRY_ID,P10_NAME'
+,p_attribute_05=>'PLSQL'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33360067800349983902)
+,p_event_id=>wwv_flow_api.id(33356377716250412548)
+,p_event_result=>'TRUE'
+,p_action_sequence=>50
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_ALERT'
+,p_attribute_01=>unistr('\012Era\0161as atnaujintas!')
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33360068062646983904)
+,p_event_id=>wwv_flow_api.id(33356377716250412548)
+,p_event_result=>'TRUE'
+,p_action_sequence=>70
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(33359245293402949887)
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33360068195154983905)
+,p_event_id=>wwv_flow_api.id(33356377716250412548)
+,p_event_result=>'TRUE'
+,p_action_sequence=>90
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>'apex.navigation.redirect ( "f?p=&APP_ID.:9:&APP_SESSION.::NO:RP::" );'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(33356377997201412550)
+,p_name=>'Insert'
+,p_event_sequence=>40
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_api.id(33359250564556949892)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33360068239549983906)
+,p_event_id=>wwv_flow_api.id(33356377997201412550)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'insert into cities (country_id, name)',
+'values (:P10_COUNTRY_ID, :P10_NAME);'))
+,p_attribute_02=>'P10_ID,P10_COUNTRY_ID,P10_NAME'
+,p_attribute_05=>'PLSQL'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33360068396341983907)
+,p_event_id=>wwv_flow_api.id(33356377997201412550)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_ALERT'
+,p_attribute_01=>unistr('\012Era\0161as sukurtas!')
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33360068466816983908)
+,p_event_id=>wwv_flow_api.id(33356377997201412550)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CLEAR'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(33359245293402949887)
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(33360068572676983909)
+,p_event_id=>wwv_flow_api.id(33356377997201412550)
+,p_event_result=>'TRUE'
+,p_action_sequence=>40
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_JAVASCRIPT_CODE'
+,p_attribute_01=>'apex.navigation.redirect ( "f?p=&APP_ID.:9:&APP_SESSION.::NO:RP::" );'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(15685050330604448014)
+,p_name=>'New'
+,p_event_sequence=>50
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P10_COUNTRY_ID'
+,p_condition_element=>'P10_COUNTRY_ID'
+,p_triggering_condition_type=>'EQUALS'
+,p_triggering_expression=>'1'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'change'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(15685050486993448015)
+,p_event_id=>wwv_flow_api.id(15685050330604448014)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_ENABLE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P10_NAME'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(15685050553371448016)
+,p_event_id=>wwv_flow_api.id(15685050330604448014)
+,p_event_result=>'FALSE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_DISABLE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P10_NAME'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(33359251369920949892)
+,p_process_sequence=>10
+,p_process_point=>'AFTER_SUBMIT'
+,p_region_id=>wwv_flow_api.id(33359245293402949887)
+,p_process_type=>'NATIVE_FORM_DML'
+,p_process_name=>'Process form Miestas'
+,p_attribute_01=>'REGION_SOURCE'
+,p_attribute_05=>'Y'
+,p_attribute_06=>'Y'
+,p_attribute_08=>'Y'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(33359251748369949892)
+,p_process_sequence=>50
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_CLOSE_WINDOW'
+,p_process_name=>'Close Dialog'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when=>'CREATE,SAVE,DELETE'
+,p_process_when_type=>'REQUEST_IN_CONDITION'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(33359250934092949892)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_region_id=>wwv_flow_api.id(33359245293402949887)
+,p_process_type=>'NATIVE_FORM_INIT'
+,p_process_name=>'Initialize form Miestas'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.component_end;
+end;
+/
