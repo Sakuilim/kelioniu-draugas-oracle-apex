@@ -1,4 +1,4 @@
-name: Cypress Tests using Cypress Docker Image
+name: Cypress Tests
 
 on: [push]
 
@@ -16,4 +16,4 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           # Specify Browser since container image is compile with Firefox
-          browser: chrome
+          browser: electron
