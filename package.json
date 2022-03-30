@@ -4,6 +4,8 @@
   },
   "scripts": {
     "cypress:open": "cypress open",
-    "cypress:run" : "cypress run --record --key 4bd9f124-1edf-4778-9662-9143f7de8e3e"
+    "cypress:run" : "cypress run --record --key 4bd9f124-1edf-4778-9662-9143f7de8e3e",
+    "build" : "rollup -c",
+    "start" : "http-server"
   }
 }
