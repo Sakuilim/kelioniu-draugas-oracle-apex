@@ -8,16 +8,6 @@ is
   l_hashed_password varchar2(1000);
   l_count           number;
 begin
--- Returns from the AUTHENTICATE_USER function 
---    0    Normal, successful authentication
---    1    Unknown User Name
---    2    Account Locked
---    3    Account Expired
---    4    Incorrect Password
---    5    Password First Use
---    6    Maximum Login Attempts Exceeded
---    7    Unknown Internal Error
---
 -- First, check to see if the user exists
     select count(*) 
       into l_count 
