@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "cypress": "^9.5.3"
+  },
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run" : "cypress run --record --key 4bd9f124-1edf-4778-9662-9143f7de8e3e"
+  }
+}
