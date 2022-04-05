@@ -12,8 +12,12 @@ context('Unit testing APEX', () => {
     cy.get('[name^=P9999_USERNAME]').type(pUsername)
     cy.get('[name^=P9999_PASSWORD]').type(pPassword)
     cy.contains('Sign In').click()
-    cy.contains('Map').click()
- 
-    cy.frameLoaded()
+     // Act
+    cy.contains(/^Audit$/).click()
+     // Assert
+    cy.get('[id="R14119112517302462428_search_field"]').type('clients')
+    cy.get('[id="R14119112517302462428_search_button"]').click()
+    cy.get('[class="a-IRR-pagination-label"]')
+    .should('have.text', '1 - 19')
   })
 })
