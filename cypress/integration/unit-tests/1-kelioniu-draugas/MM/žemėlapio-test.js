@@ -1,6 +1,6 @@
 
 context('Unit testing APEX', () => {
-  const loginPage  = 'https://apex.oracle.com/pls/apex/idework/r/game-shop/login?session=115330830766114'
+  const loginPage  = 'https://apex.oracle.com/pls/apex/idework/r/game-shop/prisijungimas?session=16779305017243'
   const pUsername   = 'admin'
   const pPassword   = 'admin'
   var   loggedInPage
@@ -10,8 +10,8 @@ context('Unit testing APEX', () => {
   it('Visit the page', () => {
     // Arrange
     cy.visit(loginPage)
-    cy.get('[name^=P10071_USERNAME]').type(pUsername)
-    cy.get('[name^=P10071_PASSWORD]').type(pPassword)
+    cy.get('[name^=P9999_USERNAME]').type(pUsername)
+    cy.get('[name^=P9999_PASSWORD]').type(pPassword)
     cy.contains('Sign In').click()
     cy.contains('Map').click()
     // - visit a web page
