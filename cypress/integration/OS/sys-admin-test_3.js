@@ -13,18 +13,11 @@ context('Unit testing APEX', () => {
       cy.get('[name^=P9999_PASSWORD]').type(pPassword)
       cy.contains('Sign In').click()
        // Act
-      cy.contains(/^Orders$/).click()
+      cy.contains(/^Audit$/).click()
        // Assert
-      cy.get('.t-MediaList-itemWrap')
-      .first()
-      .click()
-
-
-        var username = cy.get('[class="t-MediaList-title"]')
-        .first()
-        cy.get('[class="t-AVPList-value"]')
-        .first()
-        .should('have.text', '\n  vardas\n')
+       cy.get('#B14119114615988462449').click()
+       cy.get('#P4_NEW_DISPLAY')
+       .should('have.class', 'display_only')
     })
   })
   
