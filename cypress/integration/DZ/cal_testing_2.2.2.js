@@ -16,6 +16,7 @@ context('Unit testing APEX', () => {
 
     cy.get('[aria-label="Next"]').click()
     cy.get('[class="fc-today-button fc-button fc-button-primary"]').click()
+    cy.get('[class="fc-toolbar-title"]').should('have.text', '2022 m. balandis')
     // - visit a web page
    
     
