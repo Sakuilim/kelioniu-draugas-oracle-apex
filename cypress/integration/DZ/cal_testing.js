@@ -13,6 +13,9 @@ context('Unit testing APEX', () => {
     cy.get('[name^=P9999_PASSWORD]').type(pPassword)
     cy.contains('Sign In').click()
     cy.contains('Calendar').click()
+
+    cy.get('[aria-label="Next"]').click()
+    cy.get('[class="fc-today-button fc-button fc-button-primary"]').click()
     // - visit a web page
    
     
