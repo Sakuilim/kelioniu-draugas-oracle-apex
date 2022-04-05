@@ -1,7 +1,8 @@
 {
   "devDependencies": {
     "cypress": "^9.5.3",
-    "cypress-iframe": "^1.0.1"
+    "cypress-iframe": "^1.0.1",
+    "husky": "^4.3.8"
   },
   "scripts": {
     "cypress:open": "cypress open",
