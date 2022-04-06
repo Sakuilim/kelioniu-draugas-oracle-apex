@@ -15,14 +15,16 @@ context('Unit testing APEX', () => {
       cy.contains('Sign In').click()
       cy.contains('Base Data').click()
       // ----------------------------
-      // TEST #3
+      // TEST #2
       // Act
       cy.get('#R54885544083813645701_ig_toolbar_actions_button > .a-Icon').click()
-      cy.get('#R54885544083813645701_ig_toolbar_11').click()
-      cy.get('[data-value="PDF"] > .a-IG-dialog-iconList-link > .a-IG-dialog-iconList-label').click()
+      cy.get('#R54885544083813645701_ig_toolbar_3i').click()
+      cy.get('#R54885544083813645701_ig_toolbar_3_0').click()
+      cy.get('#R54885544083813645701_ig_SD_COLUMN').select('54885544424232645705')
       cy.get('.ui-button--hot').click()
       // Assert
       cy.wait(2000)
+      cy.get('.a-Toolbar-groupContainer--end > .a-Toolbar-group > .a-Button > .a-Button-label').click()
       // ----------------------------
     })
   })
