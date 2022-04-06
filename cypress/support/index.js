@@ -12,9 +12,25 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
-
+Cypress.Commands.add('getIframeBody', () => {
+    // get the iframe > document > body
+    // and retry until the body element is not empty
+    return cy
+    .get('iframe[data-cy="the-frame"]')
+    .its('0.contentDocument.body').should('not.be.empty')
+    // wraps "body" DOM element to allow
+    // chaining more Cypress commands, like ".find(...)"
+    // https://on.cypress.io/wrap
+    .then(cy.wrap)
+  })
 // Import commands.js using ES2015 syntax:
 import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
+  })
