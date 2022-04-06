@@ -15,6 +15,9 @@ context('Unit testing APEX', () => {
     cy.contains('Calendar').click()
 
     cy.get('[id="B6995565920356230632"]').click()
+    cy.get('[class="ui-dialog-title"]').should('have.text', 'Užsakymai Kalendorius')
+    
+
     // - visit a web page
    
     
