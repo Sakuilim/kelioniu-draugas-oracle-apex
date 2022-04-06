@@ -14,7 +14,7 @@ context('Unit testing APEX', () => {
       cy.get('[name^=P9999_PASSWORD]').type(pPassword)
       cy.contains('Sign In').click()
       cy.contains('Base Data').click()
-      // ----------------------------
+      // ---------------------------- Test to sort data
       // TEST #2
       // Act
       cy.get('#R54885544083813645701_ig_toolbar_actions_button > .a-Icon').click()
