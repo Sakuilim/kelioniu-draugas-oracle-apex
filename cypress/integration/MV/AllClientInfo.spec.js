@@ -18,7 +18,7 @@ context('Unit testing APEX', () => {
       cy.contains('Clients').click()
       cy.get('#R33227992996240665317_actions_button').click()
       cy.get('#R33227992996240665317_actions_menu_12i').click()
-      cy.get('.ui-button--hot')
+      cy.get('.ui-button--hot').click()
       
     })
   })
