@@ -13,20 +13,10 @@ context('Unit testing APEX', () => {
     cy.get('[name^=P9999_USERNAME]').type(pUsername)
     cy.get('[name^=P9999_PASSWORD]').type(pPassword)
     cy.contains('Sign In').click()
-    cy.contains('Map').click()
-    cy.get('[class=mapboxgl-canvas]').then($canvas => {
-      const canvasWidth = $canvas.width();
-      const canvasHeight = $canvas.height();
-
-      const canvasCenterX = (canvasWidth / 2 ) - 27;
-      const canvasCenterY = (canvasHeight / 2 ) - 100;
+    // - visit a web page
     // Act
-      cy.wrap($canvas)
-        .scrollIntoView().wait(5000)
-        .click(canvasCenterX,canvasCenterY )
-
-    })
+    cy.contains('Map').click()
     // Assert
-    cy.frameLoaded()
+    cy.title().should('eq',"Žemėlapis")
   })
 })
