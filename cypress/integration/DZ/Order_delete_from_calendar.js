@@ -14,12 +14,21 @@ context('Unit testing APEX', () => {
     cy.contains('Sign In').click()
     cy.contains('Calendar').click()
 
-    cy.get('[aria-label="Next"]').click()
-    cy.get('[class="fc-toolbar-title"]').should('have.text', '2022 m. gegužė')
-    cy.get('[class="fc-today-button fc-button fc-button-primary"]').click()
-    cy.get('[class="fc-toolbar-title"]').should('have.text', '2022 m. balandis')
+    // Click on order
+    cy.get(':nth-child(3) > .fc-day-thu > .fc-daygrid-day-frame > .fc-daygrid-day-events > .fc-daygrid-event-harness > .fc-daygrid-event > .fc-event-main').click()
+
+    // Delete order
+    cy.get('#B7053848151090470548').click()
+    cy.get('.js-confirmBtn').click()
+    cy.get('#B7053847778808470548').click()
+
+    // Assert succesfull
+    cy.get(':nth-child(3) > .fc-day-thu > .fc-daygrid-day-frame > .fc-daygrid-day-events').should('have.value', '')
+    
+    
+
+
     // - visit a web page
    
-    
   })
 })
