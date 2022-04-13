@@ -15,13 +15,16 @@ context('Unit testing APEX', () => {
       cy.get('[name^=P9999_USERNAME]').type(pUsername)
       cy.get('[name^=P9999_PASSWORD]').type(pPassword)
       cy.contains('Sign In').click()
-      cy.get('[class="t-Icon fa fa-comment-o"]').click()
-      cy.get('#apex_dialog_1')
-      
-      cy.get('[class="ui-button-icon ui-icon ui-icon-closethick"]').click()
-
-      
-      
+      cy.contains('Orders').click()
+      cy.contains('LinciusHerka').click()
+      cy.get(':nth-child(3) > [headers="ROWID"] > a > [aria-label="Redaguoti"] > .fa').should('exist')
+      cy.get(':nth-child(1) > [headers="ROWID"] > a > [aria-label="Redaguoti"] > .fa').click().wait(1000)
+      cy.get(".ui-dialog").invoke("css", "height", "500px")
+      cy.get('#ui-id-1').should('exist')//uzsakymas atidaromas
+      //delete
+      //cy.get('[class="t-Button t-Button--danger t-Button--simple"]').click() 
+      //cy.get('.js-confirmBtn').click().should('exist') // confirm delete
+      //cy.get(':nth-child(3) > [headers="ROWID"] > a > [aria-label="Redaguoti"] > .fa').should('not.exist')
     })
   })
   
