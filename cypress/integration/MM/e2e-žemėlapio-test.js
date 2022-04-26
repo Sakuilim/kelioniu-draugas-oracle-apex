@@ -9,12 +9,14 @@ context('Unit testing APEX', () => { // Vartotojo prijungimo duomenys
 
   it('Visit the page', () => {
     // Arrange
+    cy.viewport('macbook-16')
     cy.visit(loginPage) // Prisijungiama prie sistemos
     cy.get('[name^=P9999_USERNAME]').type(pUsername)
     cy.get('[name^=P9999_PASSWORD]').type(pPassword)
     cy.contains('Sign In').click()
     cy.contains('Base Data').click()
     //Act
+
     cy.wait(1000)
     cy.get('#R23510289328294114531 > .t-HeroRegion-wrap > .t-HeroRegion-col--left > .t-HeroRegion-icon').click()
     cy.get('#R23516342934171422326_actions_button').click()
@@ -58,5 +60,7 @@ context('Unit testing APEX', () => { // Vartotojo prijungimo duomenys
     cy.get('.ui-button--hot').click()
     cy.get('.a-IRR-controls-cell--remove > .a-Button > .a-Icon').click()
     cy.get('.ui-button--hot').click()
+    cy.get('#B23516346400580422328 > .t-Button-label').click()
+
   })
 })
