@@ -42,9 +42,16 @@ context('Unit testing APEX', () => { // Vartotojo prijungimo duomenys
     cy.get('#R23516342934171422326_chart_value').select('Ilguma')
     cy.get('#R23516342934171422326_aggregate_by').select('Sum')
     cy.get('.ui-button--hot').click()
+    cy.wait(1500)
     cy.get('.a-IRR-controls-item--filter > .a-IRR-controls-cell--remove > .a-Button > .a-Icon').click()// istrinam diagrama
     cy.wait(1500)
     cy.get('.a-IRR-controls-item--chart > .a-IRR-controls-cell--remove > .a-Button > .a-Icon').click()
+    cy.wait(1500)
+    cy.get('#R23516342934171422326_actions_button').click() // parsisiunčiam duomenis CSV formatu
+    cy.get('#R23516342934171422326_actions_menu_12i').click()
+    cy.wait(1500)
+    cy.get('[data-value="CSV"]').click()
+    cy.get('.ui-dialog-titlebar > .ui-button').click()
     cy.wait(1500)
     cy.get('#R23516342934171422326_actions_button').click()
     cy.get('#R23516342934171422326_actions_menu_7i').click()
@@ -60,7 +67,15 @@ context('Unit testing APEX', () => { // Vartotojo prijungimo duomenys
     cy.get('.ui-button--hot').click()
     cy.get('.a-IRR-controls-cell--remove > .a-Button > .a-Icon').click()
     cy.get('.ui-button--hot').click()
-    cy.get('#B23516346400580422328 > .t-Button-label').click()
+    cy.get(':nth-child(7) > .t-NavTabs-link').click() // atidaromas žemėlapis
+    cy.wait(5000)
+    cy.get('[aria-labelledby="23511434764006203000_legend_item_label"]').click() // spaudžiamos žemėlapio legendos
+    cy.get('[aria-labelledby="23510286425750114000_legend_item_label"]').click()
+    cy.get('[aria-labelledby="23510289009501114000_legend_item_label"]').click()
+    cy.get('[aria-labelledby="23510289137659113000_legend_item_label"]').click()
+    cy.get('.mapboxgl-ctrl-zoom-in > .mapboxgl-ctrl-icon').click() // zoom in 
+    cy.get('.maplibregl-ctrl-zoom-out > .maplibregl-ctrl-icon').click() // zoom out
+    cy.get('.maplibregl-ctrl-compass > .maplibregl-ctrl-icon').click() // kompasas
 
   })
 })
