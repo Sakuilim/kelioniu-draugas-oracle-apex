@@ -10,13 +10,14 @@ context('Unit testing APEX', () => {
   it('Visit the page', () => {
     // Arrange
     cy.visit(loginPage)
+    cy.viewport('macbook-16')
     cy.get('[name^=P9999_USERNAME]').type(pUsername)
     cy.get('[name^=P9999_PASSWORD]').type(pPassword)
     cy.contains('Sign In').click()
     cy.contains('Map').click()
     // - visit a web page
     // Act
-    cy.get('[class=mapboxgl-canvas]').then($canvas => {
+    cy.get('.maplibregl-canvas').then($canvas => {
       cy.wrap($canvas)
         .scrollIntoView().wait(5000)
 
