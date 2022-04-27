@@ -18,6 +18,15 @@ context('Unit testing APEX', () => {
        cy.get('#B14119114615988462449').click()
        cy.get('#P4_NEW_DISPLAY')
        .should('have.class', 'display_only')
+
+       cy.get('#SR_R14119112517302462428_tab > .t-Tabs-link > span')
+       .should('have.text', 'Įrašymo Operacijos')
+
+       cy.get('#SR_R14119112721477462430_tab > .t-Tabs-link > span')
+       .should('have.text', 'Atnaujinimo Operacijos')
+
+       cy.get('#SR_R14119112931935462432_tab > .t-Tabs-link > span')
+       .should('have.text', 'Ištrinimo Operacijos')
     })
   })
   
