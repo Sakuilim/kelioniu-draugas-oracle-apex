@@ -21,6 +21,12 @@ context('Unit testing APEX', () => {
 
       cy.get('[id="R6982957494849026280_heading"]')
       .should('have.text', 'Clients')
+
+      cy.get('#edit_master_btn > .t-Button-label')
+      .should('have.text', 'Edit Client')
+
+      cy.get('#B6982951518531026161 > .t-Button-label')
+      .should('have.text', 'Create Client')
     })
   })
   

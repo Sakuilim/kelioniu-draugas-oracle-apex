@@ -19,5 +19,6 @@ context('Unit testing APEX', () => {
     cy.contains(/^Help$/).click()
     // Assert
     cy.url().should('eq','https://pvprif.atlassian.net/wiki/spaces/PKPRIF/pages/17006593/Map+help')
+    cy.get('[data-testid="page-content-header"]').should('contain','Map help')
   })
 })
