@@ -10,11 +10,12 @@ context('Unit testing APEX', () => {
   it('Visit the page', () => {
     // Arrange
     cy.visit(loginPage)
+    cy.viewport('macbook-16')
     cy.get('[name^=P9999_USERNAME]').type(pUsername)
     cy.get('[name^=P9999_PASSWORD]').type(pPassword)
     cy.contains('Sign In').click()
     cy.contains('Map').click()
-    cy.get('[class=mapboxgl-canvas]').then($canvas => {
+    cy.get('.maplibregl-canvas').then($canvas => {
       const canvasWidth = $canvas.width();
       const canvasHeight = $canvas.height();
 
@@ -26,7 +27,11 @@ context('Unit testing APEX', () => {
         .click(canvasCenterX,canvasCenterY )
 
     })
+    cy.wait(2000)
     // Assert
-    cy.frameLoaded()
+    cy.get('#P21_NAME').should('have.value','Rubikių ežeras')
+    cy.get('#P21_LONGITUDE').should('have.value','25,287379')
+    cy.get('#P21_LATITUDE').should('have.value','55,50079')
+    cy.get('#P21_TYPE_ID').should('have.value','4')
   })
 })
