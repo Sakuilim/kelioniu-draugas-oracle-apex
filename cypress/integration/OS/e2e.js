@@ -83,7 +83,7 @@ context("Unit testing APEX", () => {
     cy.get('#R14119112517302462428_expression').type("orders");
     cy.get('.ui-button--hot').click();
     cy.wait(500);
-    cy.get('.a-IRR-controls-cell--remove > .a-Button > .a-Icon').click();
+    // cy.get('.a-IRR-controls-cell--remove > .a-Button > .a-Icon').click();
     cy.get('#B14119114615988462449').click();
     cy.get('#SR_R14119112931935462432_tab > .t-Tabs-link').click();
     cy.wait(1000);
