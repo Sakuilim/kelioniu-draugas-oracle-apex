@@ -40,22 +40,25 @@ context("Unit testing APEX", () => {
       "have.text",
       value1
     );
-    cy.get('.a-IRR-controls-cell--remove > .a-Button > .a-Icon').click()
-    cy.get('#R14119112517302462428_search_field').type(value2);
-    cy.get('[id="R14119112517302462428_search_button"]').click();
-    cy.get(':nth-child(2) > [headers="C14119113254974462435"]').should(
-      "have.text",
-      value2
-    );
-    cy.get('.a-IRR-controls-cell--remove > .a-Button > .a-Icon').click()
-    cy.get('#R14119112517302462428_search_field').type(value3);
-    cy.get('[id="R14119112517302462428_search_button"]').click();
-    cy.get('[id="R14119112517302462428_search_button"]').click();
-    cy.get(':nth-child(2) > [headers="C14119113254974462435"]').should(
-      "have.text",
-      value3
-    );
-    cy.get('#SR_R14119112721477462430_tab > .t-Tabs-link > span')
+    // cy.get('.a-IRR-controls-cell--remove > .a-Button > .a-Icon').click()
+    // cy.get('#R14119112517302462428_search_field').type(value2);
+    // cy.get('[id="R14119112517302462428_search_button"]').click();
+    // cy.wait();
+    // cy.get(':nth-child(2) > [headers="C14119113254974462435"]').should(
+    //   "have.text",
+    //   value2
+    // );
+    // cy.get('.a-IRR-controls-cell--remove > .a-Button > .a-Icon').click()
+    // cy.wait();
+    // cy.get('#R14119112517302462428_search_field').type(value3);
+    // cy.get('[id="R14119112517302462428_search_button"]').click();
+    // cy.get('[id="R14119112517302462428_search_button"]').click();
+    // cy.wait();
+    // cy.get(':nth-child(2) > [headers="C14119113254974462435"]').should(
+    //   "have.text",
+    //   value3
+    // );
+    // cy.get('#SR_R14119112721477462430_tab > .t-Tabs-link > span')
 
   });
 });
